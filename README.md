@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 About This Project:
 
 -   🔧 Backend Setup
@@ -51,4 +52,6 @@ npm run start
 ```
 
 ### I'll see you in the next one! 🚀
+=======
+>>>>>>> 0eff19fdf5043e0eed5497594af898534b2b89c5
 # Adv--Auth
