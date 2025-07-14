@@ -14,26 +14,30 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const __dirname = path.resolve();
 
-const allowedOrigins = [
-    "http://localhost:5173",
-    "https://adv-auth-six.vercel.app",
-  ];
+// const allowedOrigins = [
+//     "http://localhost:5173",
+//     "https://adv-auth-six.vercel.app",
+//   ];
   
-  app.use(
-    cors({
-      origin: function (origin, callback) {
-        // Allow requests with no origin like mobile apps or curl
-        if (!origin) return callback(null, true);
-        if (allowedOrigins.includes(origin)) {
-          return callback(null, true);
-        } else {
-          return callback(new Error("Not allowed by CORS"));
-        }
-      },
-      credentials: true,
-    })
-  );
-  
+//   app.use(
+//     cors({
+//       origin: function (origin, callback) {
+//         // Allow requests with no origin like mobile apps or curl
+//         if (!origin) return callback(null, true);
+//         if (allowedOrigins.includes(origin)) {
+//           return callback(null, true);
+//         } else {
+//           return callback(new Error("Not allowed by CORS"));
+//         }
+//       },
+//       credentials: true,
+//     })
+//   );
+
+app.use(cors({
+    origin: 'http://localhost:5173',
+    credentials: true,
+}));
 
 app.use(express.json()); // allows us to parse incoming requests:req.body
 app.use(cookieParser()); // allows us to parse incoming cookies
